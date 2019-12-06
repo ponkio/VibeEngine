@@ -4,8 +4,13 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
 
 [packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
+
+[scripts]
+dev_server = "python VibeEngine.py -m server"
+dev_client = "python VibeEngine.py -m client -s 127.0.0.1"

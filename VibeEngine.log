@@ -1,5 +1,5 @@
-2019-12-01 14:55:57,615:__main__:INFO:Starting VibeEngine
-2019-12-01 14:55:57,615:helpers.Utils:INFO:Parsing cli arguments
-2019-12-01 14:55:57,616:__main__:DEBUG:CLI running
-2019-12-01 14:55:57,616:__main__:INFO:Starting VibeEngine Server
-2019-12-01 14:55:57,624:werkzeug:INFO: * Running on http://0.0.0.0:45/ (Press CTRL+C to quit)
+2019-12-05 23:44:58,540:__main__:INFO:Starting VibeEngine
+2019-12-05 23:44:58,540:helpers.Utils:INFO:Parsing cli arguments
+2019-12-05 23:44:58,545:__main__:DEBUG:CLI running
+2019-12-05 23:44:58,545:__main__:INFO:Starting VibeEngine Server
+2019-12-05 23:44:58,586:werkzeug:INFO: * Running on http://0.0.0.0:46415/ (Press CTRL+C to quit)

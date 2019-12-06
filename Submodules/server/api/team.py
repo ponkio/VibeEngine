@@ -1,4 +1,4 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 
 
 '''
@@ -44,7 +44,15 @@ Add team to round
 '''
 class Team(Resource):
     def get(self):
-        return {"message": "Hello, World!"}
+        parser = reqparse.RequestParser()
+        parser.add_argument("name")
+        args = parser.parse_args()
+
+        print()
+        if args == "null":
+            return {"message":"Missing arguments"}
+
+        return {"message": "fuc", "args":args}
 
     def post(self):
         return {"messsage":"Creating new team"}

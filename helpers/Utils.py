@@ -11,7 +11,7 @@ def parse_cli_args():
 -s --server [Server IP address when mode == client]
 '''
     logger.info("Parsing cli arguments")
-    parser = argparse.ArgumentParser(description="CyberPatrio Scoring Engine cli")
+    parser = argparse.ArgumentParser(description="CyberPatriot Scoring Engine cli")
 
     ## Force the decision of either -c or -m
     mparser = parser.add_mutually_exclusive_group()
