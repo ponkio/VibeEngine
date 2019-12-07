@@ -12,24 +12,18 @@
 # config.py - Config for the api server
 ###
 from flask import Flask
-
+from flask_pymongo import PyMongo
 from os import path, walk
+from .app import api_bp
 
 class Server:
     def __init__(self, listeningAddr='0.0.0.0', listeningPort=46415):
         self.listeningAddr = listeningAddr
         self.listeningPort = listeningPort
 
-    def start_api(self):
+    def start(self):
         app = Flask(__name__)
         #app.config.from_object(config_filename)
-        
-        from .app import api_bp
+       
         app.register_blueprint(api_bp, url_prefix='/api')
-
-        return app
-
-    def start(self):
-        
-        vEngineAPI = self.start_api()
-        vEngineAPI.run(self.listeningAddr,self.listeningPort,debug=False)  
+        app.run(self.listeningAddr,self.listeningPort,debug=True)

@@ -4,7 +4,7 @@
             "name": "VibeEngine Server",
             "script":"pipenv",
             "args":["run", "dev_server"],
-            "watch":["**/server/**/*.py","**/*.json"],
+            "watch":["**/server/**/*.py","**/*.json", "VibeEngine.py"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "interpreter": "/usr/bin/python3",
             "autorestart":false
@@ -13,7 +13,7 @@
             "name":"VibeEngine Client",
             "script":"pipenv",
             "args":["run", "dev_client"],
-            "watch":["**/client/**/*.py", "**/*.json"],
+            "watch":["**/client/**/*.py", "**/*.json", "VibeEngine.py"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "interpreter":"/usr/bin/python3",
             "autorestart":false
