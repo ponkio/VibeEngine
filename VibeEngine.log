@@ -1,7 +1,6 @@
-2019-12-06 20:44:27,319:__main__:INFO:Starting VibeEngine
-2019-12-06 20:44:27,319:helpers.Utils:INFO:Parsing cli arguments
-2019-12-06 20:44:27,323:__main__:DEBUG:CLI running
-2019-12-06 20:44:27,323:__main__:INFO:Starting VibeEngine Server
-2019-12-06 20:44:27,338:werkzeug:WARNING: * Debugger is active!
-2019-12-06 20:44:27,339:werkzeug:INFO: * Debugger PIN: 121-913-991
-2019-12-06 20:44:27,418:werkzeug:INFO:127.0.0.1 - - [06/Dec/2019 20:44:27] "GET /api/team?team_name=test HTTP/1.1" 200 -
+2019-12-08 17:33:00,945:__main__:INFO:Starting VibeEngine
+2019-12-08 17:33:00,946:helpers.Utils:INFO:Parsing cli arguments
+2019-12-08 17:33:00,954:__main__:DEBUG:CLI running
+2019-12-08 17:33:00,955:__main__:INFO:Starting VibeEngine Server
+2019-12-08 17:33:00,983:werkzeug:WARNING: * Debugger is active!
+2019-12-08 17:33:00,984:werkzeug:INFO: * Debugger PIN: 121-913-991

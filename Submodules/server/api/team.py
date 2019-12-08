@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
 import uuid
 from bson.json_util import dumps
-
+import datetime
 '''
 Get team information
 req:
@@ -40,8 +40,6 @@ resp:
         'name':<team name>,
         'members':<team memebers>
     }}
-
-Add team to round
 '''
 class Team(Resource):
 
@@ -49,6 +47,7 @@ class Team(Resource):
         self.db = kwargs['mongo']
         self.Teams_col = self.db.Teams
 
+    ## Redact sensitive team information
     def _redact_info(self, teams):
         return_list = []
         for team in teams:
@@ -64,10 +63,11 @@ class Team(Resource):
         args = parser.parse_args()
 
         ## This will pull all the ones that are equal to None also...fuck I need a drink
-        ## This also should be done with a map()
+        ## also this should be done with a map()
         teams = self._redact_info(list(self.Teams_col.find({"$or":[{"team_name":args['team_name'].lower()}, {"team_number":args['team_number']}]})))
         
         return {"message":"Teams found","Teams":dumps(teams)}
+
 
     def _generate_team(self, team):
         team['team_name'] = team['team_name'].lower()
@@ -76,7 +76,8 @@ class Team(Resource):
         ## instances will be changed each round
         ## Maybe I can have a history of the instances...probably not thats dumb
         team['instances'] = None
-
+        team['created_at'] = datetime.datetime.now()
+        team['last_updated'] = None
         return team
 
     def post(self):
@@ -110,4 +111,7 @@ class Team(Resource):
     '''
     def delete(self):
         Delete team if the UID matches
+
+    def put(self):
+        Some sort of update shit
     '''
