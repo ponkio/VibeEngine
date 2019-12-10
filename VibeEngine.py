@@ -1,7 +1,7 @@
 from helpers.Utils import parse_cli_args, parse_config_args
 import logging
 from Submodules.client.client import Client
-from Submodules.server.server import Server
+from subprocess import Popen, PIPE
 
 def main(args):
     if cli_args.config:
@@ -16,8 +16,12 @@ def main(args):
         elif cli_args.mode == "server":
             logger.info("Starting VibeEngine Server")
 
-            vEngine = Server()
-            vEngine.start()
+            ## This isnt very pretty, but neither am I 
+            ## it works atleast
+            ## I really need to get away from "it works" mentality...
+            ## Still need to pass the listening IP and port
+            process = Popen(['node', 'Submodules/server/main.js'], stdout=PIPE, stderr=PIPE)
+            stdout, stderr = process.communicate()
     pass
 
 if __name__ == "__main__":

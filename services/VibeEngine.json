@@ -2,11 +2,9 @@
     "apps":[
         {
             "name": "VibeEngine Server",
-            "script":"pipenv",
-            "args":["run", "dev_server"],
-            "watch":["**/server/**/*.py","**/*.json", "VibeEngine.py"],
+            "script":"Submodules/server/main.js",
+            "watch":["**/server/**/*.js","**/*.json", "VibeEngine.py"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
-            "interpreter": "/usr/bin/python3",
             "autorestart":false
         },
         {

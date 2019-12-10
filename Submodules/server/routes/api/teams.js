@@ -3,12 +3,22 @@ const router = express.Router();
 const Teams = require('../models/Teams');
 const Teams_helper = require('../helpers/Teams_helper');
 
+var helper = new Teams_helper();
+
 router.get('/', (req, res) => {
-    return res.json({sucess:true, message:"GET"})
+    helper.getTeam(req.query, (result) => {
+        if(result){
+            return res.json(result)
+        }
+    });
 });
 
 router.post('/', (req, res) => {
-    return res.json({success: true, message:"POST"})
+    helper.insertTeam(req, (results) => {
+        if(results){
+            return res.json(results)
+        }
+    })
 });
 
 module.exports = router;

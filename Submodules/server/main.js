@@ -26,7 +26,7 @@ this.db.on("error", (err) => {
     logger.error({label:`dbConnection`, message: `MongoDB connection error: ${err}`});
 });
 
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 //Will loop through all the endpoints and create their respective routes

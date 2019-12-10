@@ -5,7 +5,7 @@ const Teams_schema = new Schema(
     {
         team_name: String,
         team_number: String,
-        uuid: String,
+        uid: String,
         instances: Array, 
         rounds: Array
     },
