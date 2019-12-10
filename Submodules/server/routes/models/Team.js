@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Teams_schema = new Schema(
+const Team_schema = new Schema(
     {
         team_name: String,
         team_number: String,
@@ -12,4 +12,4 @@ const Teams_schema = new Schema(
     {timestamps: true}
 )
 
-module.exports = Teams = mongoose.model("Teams", Teams_schema)
+module.exports = mongoose.model("Teams", Team_schema)

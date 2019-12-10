@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const Teams_schema = require('../models/Teams');
+const Teams_schema = require('../models/Team');
 const logger = require('../../plugins/logger');
 const uuid = require('uuid/v4');
 
@@ -42,7 +42,6 @@ class Teams_helper {
                 cb(false)
             }
         });
-        
         //console.log(existing_team)
         //logger.debug({label:`checkExisting`, message:`Existing Team: ${existing_team}`})
     }
