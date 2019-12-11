@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const Instance_schema = require('../models/Instance');
+const Team_schema = require('../models/Team');
 const logger = require('../../plugins/logger');
 const uuid = require('uuid/v4');
 
@@ -49,7 +50,7 @@ class Instances_helper {
         return result;
     }
 
-    create_new_instance(req, callback){
+    async create_new_instance(req, callback){
 
         //Only allow for required args
         //Once again...maybe a utils.js function
@@ -59,12 +60,22 @@ class Instances_helper {
         let required_keys = _.without(Object.keys(Instance_schema.schema.paths), '_id','team._id','uid','score', 'score.current', 'score.previous','updatedAt','createdAt','__v')
         if(!_.isEqual(_.sortBy(passed_keys), _.sortBy(required_keys))) {
             logger.info({label:`create_new_instance`, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
-            return callback({status:400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
+            //return callback({status:400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
         }
 
+        let team = await Team_schema.findOne({team_name:req.body.team.team_name}, (err) => {
+            if(err){
+                throw new Error(err);
+            }
+        });
+
+        if(!team) {
+            callback({status:400, message:`Unable to assign team to instance: Team not found`})
+        }
+        
         let new_instance = new Instance_schema(req.body);
         new_instance.uid = uuid();
-
+        new_instance.team = team._id;
         callback({status:200, message:new_instance})
     }
 }

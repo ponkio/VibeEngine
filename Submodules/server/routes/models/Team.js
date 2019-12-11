@@ -6,7 +6,7 @@ const Team_schema = new Schema(
         team_name: String,
         team_number: String,
         uid: String,
-        instances: Array, 
+        instances: [{type: mongoose.Schema.Types.ObjectId, ref:'Instances'}], 
         rounds: Array
     },
     {timestamps: true}

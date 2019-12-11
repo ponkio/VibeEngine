@@ -8,11 +8,8 @@ const Instance_schema = new Schema(
             release: String,
             ip: String
         },
-        scoring_config: String,
-        team: {
-            _id: {type: mongoose.Schema.Types.ObjectId, ref: 'Teams'},
-            team_name:String
-        },
+        scoring_config: Object,
+        team: {type: mongoose.Schema.Types.ObjectId, ref: 'Teams'},
         score: {
             current: Number,
             previous: Number
