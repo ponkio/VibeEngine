@@ -9,7 +9,7 @@ class Instances_helper {
     //Verbose setting to collect all the information (gathers the documents and not just the OID)
     getInstance(query, callback){
         //Move this to some sort of ../../plugins/utils.js class
-        let keys = Object.keys(query);
+        let keys =  _.without(Object.keys(query), 'verbose');
         let compare = Object.keys(Instance_schema.schema.paths);
         for(var i in keys){
             let compare_val = keys[i];
@@ -20,7 +20,7 @@ class Instances_helper {
         }
 
         //Should also be sanitized and also redact information...Just dont know what..yet..unless ;)
-        Instance_schema.findOne(query).populate('team').exec( (err, instance) => {
+        Instance_schema.findOne(_.omit(query, 'verbose')).populate(((query.verbose) ? 'team':'')).exec( (err, instance) => {
             if(err){
                 //This error should be tested
                 //Also maybe some sort of utils.js class to handle errors???
@@ -89,7 +89,7 @@ class Instances_helper {
         new_instance.save((err, instance) => {
             logger.info({label:`create_new_instance`, message:`New instance created: ${instance._id}`});
             Team_schema.findOneAndUpdate({_id:team._id}, {$push:{instances:instance}}, {new:true},(err, new_team) => {
-                instance.team = new_team;
+                instance.team = new_team._id;
                 return callback({status:200, message:instance})
             });
       //return callback({status:200, message:instance})

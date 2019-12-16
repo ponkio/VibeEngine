@@ -20,10 +20,8 @@ class Teams_helper {
         }
         
         // This needs to be sanitized much much much more
-        // Also still need to work out verbose logic
-        // If verbose then populate
         // Populate is being used to resolve the Object IDs within Team.instances, this only took a week to finally understand
-        Teams_schema.findOne(_.omit(query, 'verbose')).populate('instances').exec( (err, team) => {
+        Teams_schema.findOne(_.omit(query, 'verbose')).populate(((query.verbose) ? 'instances':'')).exec( (err, team) => {
             if(err){
                 logger.error({label:`getTeam`, message:err});
                 throw new Error(err);
@@ -71,7 +69,7 @@ class Teams_helper {
             } else {
                 new_team.save((err, team) => {
                     logger.info({label:`insertTeam`, message:`Inserting new team: ${team}`})
-                    return callback({status:201, message:`New team created ${team}`})
+                    return callback({status:201, team:team})
                 });
             }
         })
