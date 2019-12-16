@@ -14,7 +14,7 @@ this.mongo_url=`${this.db_base}?retryWrites=true`
 
 mongoose.connect(
     this.mongo_url,
-    { useNewUrlParser: true}
+    { useNewUrlParser: true, useUnifiedTopology: true}
 );
 mongoose.set('useFindAndModify', false);
 this.db = mongoose.connection;

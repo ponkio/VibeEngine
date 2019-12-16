@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const Round_helper = require('../helpers/Rounds_helper')
+
+var helper = new Round_helper();
 
 
 router.get('/', (req, res) => {
-    return res.json({sucess:true, message:"GET"})
+    helper.getRound(req.query, (result) => {
+        return res.json(result)
+    })
 });
 
 router.post('/', (req, res) => {

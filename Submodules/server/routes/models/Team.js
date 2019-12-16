@@ -6,8 +6,9 @@ const Team_schema = new Schema(
         team_name: String,
         team_number: String,
         uid: String,
-        instances: [{type: mongoose.Schema.Types.ObjectId, ref:'Instances'}], 
-        rounds: Array
+        instances: [
+            {type: mongoose.Schema.Types.ObjectId, ref:'Instances'}
+        ], 
     },
     {timestamps: true}
 )

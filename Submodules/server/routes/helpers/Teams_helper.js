@@ -7,8 +7,9 @@ class Teams_helper {
     //This needs to restrict the output and not allow someone to query for uuid
     //Also needs to redact the team uuid and _id from the object before returnng
     getTeam(query, callBack){
-        //This does not parse out the qery correctly 
-        let keys = Object.keys(query);
+        
+        //If the query is empty then return null 
+        let keys = _.without(Object.keys(query), 'verbose');
         let compare = Object.keys(Teams_schema.schema.paths);
         for(var i in keys){
             let compare_val = keys[i];
@@ -19,7 +20,10 @@ class Teams_helper {
         }
         
         // This needs to be sanitized much much much more
-        Teams_schema.findOne(query, (err, team) => {
+        // Also still need to work out verbose logic
+        // If verbose then populate
+        // Populate is being used to resolve the Object IDs within Team.instances, this only took a week to finally understand
+        Teams_schema.findOne(_.omit(query, 'verbose')).populate('instances').exec( (err, team) => {
             if(err){
                 logger.error({label:`getTeam`, message:err});
                 throw new Error(err);
