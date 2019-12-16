@@ -20,7 +20,7 @@ class Instances_helper {
         }
 
         //Should also be sanitized and also redact information...Just dont know what..yet..unless ;)
-        Instance_schema.findOne(query, (err, instance) => {
+        Instance_schema.findOne(query).populate('team').exec( (err, instance) => {
             if(err){
                 //This error should be tested
                 //Also maybe some sort of utils.js class to handle errors???
