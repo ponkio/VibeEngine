@@ -33,6 +33,8 @@ class Teams_helper {
         //callBack({status:200, message:team})
     }
 
+    //Yet another utils function
+    // Theres just more and more of these popping up all over the place 
     checkExisting(new_team, cb){
         Teams_schema.findOne({$or:[{"team_name":new_team.team_name}, {"team_number":new_team.team_number}]}, (err, team) => {
             if(err){

@@ -7,8 +7,8 @@ const Round_schema = new Schema(
         uid: String,
         teams:[
             {
-                team_id: {type:mongoose.Schema.Types.ObjectId, ref: 'Teams'},
-                instance: [{type:mongoose.Schema.Types.ObjectId, ref: 'Instances'}]
+                team: {type:mongoose.Schema.Types.ObjectId, ref: 'Teams'},
+                running_instances: [{type:mongoose.Schema.Types.ObjectId, ref: 'Instances'}]
             }
         ],
         config: {
@@ -19,4 +19,4 @@ const Round_schema = new Schema(
     {timestamps:true}
 )
 
-module.exports = Round_schema;
+module.exports = mongoose.model("Rounds", Round_schema);
