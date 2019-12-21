@@ -4,6 +4,7 @@ const logger = require('../../plugins/logger')
 const uuid = require('uuid/v4')
 class Rounds_helper{
 
+   //GET 
     getRound(query, callback) {
         //Values that can not be used to query for a round
         //Add this to Utils.js
@@ -70,16 +71,18 @@ class Rounds_helper{
         //logger.debug({label:`checkExisting`, message:`Existing Team: ${existing_team}`})
     }
 
+    //POST
     async create_round(req, callback){
 
         let passed_keys = this.getKeys(req.body);
-        let required_keys = _.without(Object.keys(Round_schema.schema.paths), 'createdAt', 'updatedAt', 'uid', 'teams', '_id', '__v')
+        let required_keys = _.without(Object.keys(Round_schema.schema.paths), 'createdAt', 'updatedAt', 'uid', 'teams', '_id', '__v', 'running')
         if(!_.isEqual(_.sortBy(passed_keys), _.sortBy(required_keys))){
             logger.info({label:`create_new_instance`, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
             return callback({status: 400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
         }
 
         let new_round = new Round_schema(req.body);
+        new_round.running = false;
         new_round.uid = uuid();
 
         await this.checkExisting(new_round, (results, round) => {
@@ -94,6 +97,26 @@ class Rounds_helper{
                 })
             }
         });
+    }
+
+
+    //POST /api/rounds/:round/start
+    start_round(params, callback) {
+        Round_schema.findOneAndUpdate({name:params.name}, {running:true}, (err, round) => {
+            console.log(round)
+            if(!round) {
+                return callback({status:400, message:`Round ${params.name} not found`});
+            };
+
+            return callback({status: 200, message:`Round ${params.name} started`})
+        })
+    };
+
+
+    stop_round(params, callback) {
+        Round_schema.findOneAndUpdate({name:params.name}, {running:false}, (err, round) => {
+            return callback({status: 200, message:`Round ${params.name} has been stopped`})
+        })
     }
 }
 

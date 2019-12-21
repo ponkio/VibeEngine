@@ -20,7 +20,15 @@ router.post('/', (req, res) => {
 
 //Start a round
 router.post('/:name/start', (req, res) => {
-    return res.json(req.params)
+    helper.start_round(req.params, (result) => {
+        return res.json(result)
+    })
+})
+
+router.post('/:name/stop', (req, res) => {
+    helper.stop_round(req.params, (result) => {
+        return res.json(result);
+    })
 })
 
 module.exports = router;

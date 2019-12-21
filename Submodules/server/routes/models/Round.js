@@ -5,6 +5,7 @@ const Round_schema = new Schema(
     {
         name: String,
         uid: String,
+        running:Boolean,
         teams:[
             {
                 team: {type:mongoose.Schema.Types.ObjectId, ref: 'Teams'},
@@ -12,8 +13,9 @@ const Round_schema = new Schema(
             }
         ],
         config: {
-            timeLimit: Date,
-            instanceLimit: Number
+            round_time_limit: Date,
+            instance_time_limit: Date,
+            instance_limit: Number
         }
     },
     {timestamps:true}

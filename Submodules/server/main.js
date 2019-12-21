@@ -34,7 +34,10 @@ config.endpoints.map( (local_app) => {
     app.use(local_app.route, require(local_app.app_path));
 });
 
-
+//Start the rest API
 app.listen(port, () => {
     logger.info({label:`main`, message:`Starting server on port ${port}`});
 });
+
+
+//Start the scoring for each round/instance
