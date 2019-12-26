@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 //const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/config');
-
+const engine = require('./engine.js')
 const logger = require('./plugins/logger')
 
 const app = express();
@@ -41,3 +41,6 @@ app.listen(port, () => {
 
 
 //Start the scoring for each round/instance
+engine.start(() => {
+    logger.info({label:`main`, message: `Starting main engine`})
+});

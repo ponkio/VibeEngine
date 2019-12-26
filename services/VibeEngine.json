@@ -3,7 +3,7 @@
         {
             "name": "VibeEngine Server",
             "script":"Submodules/server/main.js",
-            "watch":["**/server/**/*.js","**/*.json", "VibeEngine.py"],
+            "watch":["**/server/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "autorestart":false
         },

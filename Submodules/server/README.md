@@ -92,7 +92,8 @@ Body:
 	"scoring_config": "WIP",
 	"team":{
 		"team_name":"test2"
-	}
+	},
+    "round":"Oklahoma Cup"
 }
 ```  
 Resp:  
@@ -107,6 +108,7 @@ Resp:
         "_id": "5df6ea6c6c7db43f953f4f5e",
         "scoring_config": "WIP",
         "uid": "a80f7d8d-0a11-406c-b926-44c0dd2e5ff4",
+        "round: "5df974eea7a5a05b3e7daa95",
         "team": "5def1511b4ba7c7ae6ffd5cf",
         "createdAt": "2019-12-16T02:22:36.743Z",
         "updatedAt": "2019-12-16T02:22:36.743Z",

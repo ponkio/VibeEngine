@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const Instance_schema = require('../models/Instance');
+const Round_schema = require('../models/Round')
 const Team_schema = require('../models/Team');
 const logger = require('../../plugins/logger');
 const uuid = require('uuid/v4');
@@ -78,6 +79,12 @@ class Instances_helper {
             //Need to return the callback so it doesnt try to read _.id from a null object
             return callback({status:400, message:`Unable to assign team to instance: Team not found`})
         }
+
+        let round = await Round_schema.findOne({name:req.body.round}, (err) => {
+            if(err) {
+                throw new Error(err);
+            }
+        })
         
         let new_instance = new Instance_schema(req.body);
         new_instance.uid = uuid();
@@ -86,14 +93,32 @@ class Instances_helper {
 
         //team.instances.push(new_instance);
         //team.save()
+
+        
+       
+
         new_instance.save((err, instance) => {
+            if(err) {
+                //Means it didnt find the round name
+                return callback({status:500, message:err})
+            }
             logger.info({label:`create_new_instance`, message:`New instance created: ${instance._id}`});
             Team_schema.findOneAndUpdate({_id:team._id}, {$push:{instances:instance}}, {new:true},(err, new_team) => {
                 instance.team = new_team._id;
-                return callback({status:200, message:instance})
+                Round_schema.findOneAndUpdate({_id:round._id}, {$push:{teams:new_team}}, {new:true}, (err, round) => {
+                    if(err){
+                        return callback({status:500, message:err})
+                    }
+                    return callback({status:200, message:[instance, round]})
+                })
             });
       //return callback({status:200, message:instance})
         })
+    }
+
+    //Gets ran when a client first checks in, where the round gets assigned to the instance
+    client_checkin(req, callback) {
+
     }
 }
 
