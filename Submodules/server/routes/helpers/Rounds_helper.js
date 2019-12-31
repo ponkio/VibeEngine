@@ -29,13 +29,15 @@ class Rounds_helper{
             }
         });*/
 
-        Round_schema.findOne(query, (err, round) => {
+        Round_schema.findOne(_.omit(query, 'verbose')).populate(((query.verbose) ? 'instances':'')).exec( (err, round) => {
             if(err){
+                //This error should be tested
+                //Also maybe some sort of utils.js class to handle errors???
                 logger.err({label:`getRound`, message:err})
-                return callback({status:500, message:err});
+                return callback({status:500, message:err})
             }
             logger.info({label:`getRound`, message:round})
-            return callback({status:200, round:round})
+            return callback({status:200, instance:round})
         })
     }
 
@@ -75,7 +77,7 @@ class Rounds_helper{
     async create_round(req, callback){
 
         let passed_keys = this.getKeys(req.body);
-        let required_keys = _.without(Object.keys(Round_schema.schema.paths), 'createdAt', 'updatedAt', 'uid', 'teams', '_id', '__v', 'running')
+        let required_keys = _.without(Object.keys(Round_schema.schema.paths), 'createdAt', 'updatedAt', 'uid', 'teams', '_id', '__v', 'running', 'instances')
         if(!_.isEqual(_.sortBy(passed_keys), _.sortBy(required_keys))){
             logger.info({label:`create_new_instance`, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
             return callback({status: 400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})

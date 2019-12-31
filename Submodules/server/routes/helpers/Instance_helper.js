@@ -89,13 +89,11 @@ class Instances_helper {
         let new_instance = new Instance_schema(req.body);
         new_instance.uid = uuid();
         //new_instance.team needs to have the some of the team object like name AND ._id...maybe..who knows I'm not database engineer
-        new_instance.team = team;
-
+        new_instance.team = team._id;
+        new_instance.round = round._id;
+        new_instance.running = false;
         //team.instances.push(new_instance);
         //team.save()
-
-        
-       
 
         new_instance.save((err, instance) => {
             if(err) {
@@ -105,14 +103,16 @@ class Instances_helper {
             logger.info({label:`create_new_instance`, message:`New instance created: ${instance._id}`});
             Team_schema.findOneAndUpdate({_id:team._id}, {$push:{instances:instance}}, {new:true},(err, new_team) => {
                 instance.team = new_team._id;
-                Round_schema.findOneAndUpdate({_id:round._id}, {$push:{teams:new_team}}, {new:true}, (err, round) => {
-                    if(err){
-                        return callback({status:500, message:err})
-                    }
-                    return callback({status:200, message:[instance, round]})
-                })
-            });
-      //return callback({status:200, message:instance})
+                return callback({status:200, message:[instance, round]})
+            })      //return callback({status:200, message:instance})
+
+            //When updating a document that is referencing please for the love of god push the entire document and not just the ._id
+            //While pushing the ._id will work its just kinda gross...Not that everything else in this ISNT gross but still
+            Round_schema.findOneAndUpdate({_id:round._id}, {$push:{instances:instance._id}}, (err, round) => {
+                if(err) {
+                    return callback({status:500, message:err})
+                }
+            })
         })
     }
 
