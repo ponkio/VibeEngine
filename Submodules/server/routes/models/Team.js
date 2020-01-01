@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const Team_schema = new Schema(
     {
-        team_name: String,
-        team_number: String,
+        //This should have some more stuff for the people who pay for the service
+        team_name: {type:String, require:[true, "Team name required to create a team"]},
+        team_number: {type:String},
         uid: String,
         instances: [
             {type: mongoose.Schema.Types.ObjectId, ref:'Instances'}
@@ -13,4 +14,14 @@ const Team_schema = new Schema(
     {timestamps: true}
 )
 
-module.exports = mongoose.model("Teams", Team_schema)
+Team_schema.pre('save', function(next) {
+    Team_model.findOne({$or:[{team_name:this.team_name}, {team_number:this.team_number}]}, (err, team) => {
+        if(!team){
+            next()
+        } else {
+            next("Team already exists")
+        }
+    })
+})
+
+module.exports = Team_model = mongoose.model("Teams", Team_schema)

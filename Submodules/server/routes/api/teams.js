@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    helper.insertTeam(req, (results) => {
+    helper.create_new_team(req, (results) => {
         if(results){
             return res.json(results)
         }
