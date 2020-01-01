@@ -10,7 +10,7 @@ class Rounds_helper{
         //Add this to Utils.js
         let invalid_vals = ['test', 'test2'];
         let invalid_list = [];
-        let keys = Object.keys(query).map(val => {
+        Object.keys(query).map(val => {
             if(invalid_vals.includes(val)){
                 invalid_list.push(val);
             }
@@ -19,88 +19,44 @@ class Rounds_helper{
             return callback({message:`Unable to perform query with the following keys`, invalid_keys:invalid_list});
         }
 
-        //This is just fucked, not too sure why, dont want to fix it right now
-        /*
-        let schema_keys = Object.keys(Round_schema.schema.paths);
-        keys.map(key => {
-            if(!schema_keys.includes(keys[key])) {
-                logger.info({label:`getRound`, message:`Bad value passed: ${key}`})
-                return callback({status:400, message:`Bad value passed: ${key}`})
-            }
-        });*/
-
+        //The populate function will only resolve the object IDs if verbose=true
+        //Pretty proud of that functions ngl
         Round_schema.findOne(_.omit(query, 'verbose')).populate(((query.verbose) ? 'instances':'')).exec( (err, round) => {
             if(err){
-                //This error should be tested
-                //Also maybe some sort of utils.js class to handle errors???
+                //I really hate if statements...I dont wanna use them :'(
                 logger.err({label:`getRound`, message:err})
                 return callback({status:500, message:err})
+            } else if(!round) {
+                logger.info({label:`getRound`, message:`Round query with the following parameters: ${JSON.stringify(query)}`})
+                return callback({status:200, message:`No round found with the given parameters`})
+            } else {
+                logger.info({label:`getRound`, message:`Round query with the following parameters: ${JSON.stringify(query)}`})
+                return callback({status:200, round:round})
             }
-            logger.info({label:`getRound`, message:round})
-            return callback({status:200, instance:round})
         })
     }
 
-    getKeys(object) {
-        function iter(o, p) {
-            if (Array.isArray(o)) { return; }
-            if (o && typeof o === 'object') {
-                var keys = Object.keys(o);
-                if (keys.length) {
-                    keys.forEach(function (k) { iter(o[k], p.concat(k)); });
-                }
-                return;
-            }
-            result.push(p.join('.'));
-        }
-        var result = [];
-        iter(object, []);
-        return result;
-    }
-
-    checkExisting(new_round, cb){
-        Round_schema.findOne({"name":new_round.name}, (err, round) => {
-            if(err){
-                logger.error({label:`checkExisting`, message:err})
-            }
-            if(round) {
-                cb(round)
-            } else {
-                cb()
-            }
-        });
-        //console.log(existing_team)
-        //logger.debug({label:`checkExisting`, message:`Existing Team: ${existing_team}`})
-    }
-
-    //POST
+    //POST /api/round
     async create_round(req, callback){
-
-        let passed_keys = this.getKeys(req.body);
-        let required_keys = _.without(Object.keys(Round_schema.schema.paths), 'createdAt', 'updatedAt', 'uid', 'teams', '_id', '__v', 'running', 'instances')
-        if(!_.isEqual(_.sortBy(passed_keys), _.sortBy(required_keys))){
-            logger.info({label:`create_new_instance`, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
-            return callback({status: 400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
-        }
+        //Holy Shit moving the validation to the model removed so much code...
+        //As Clark once said "Some programmers brag about the low line count their program is"
+        //Fuck those guys
 
         let new_round = new Round_schema(req.body);
-        new_round.running = false;
         new_round.uid = uuid();
 
-        await this.checkExisting(new_round, (results, round) => {
-            if(results){
-                return callback({status:400, message:round});
+        //This took so long to actually implement but damn is it cool
+        //Logic is taking place in the middleware in ../models/Round.s
+        new_round.save((err) => {
+            if(err) {
+                return callback({status:500, message:`Unable to create round: ${err}`})
             } else {
-                new_round.save((err, round) => {
-                    logger.info({label:`create_round`, message:`Creating a new round ${round}`})
-                    if(!err){
-                        return callback({status:201, round:round})
-                    }
-                })
+                return callback({status:200, message:"New round created"})
             }
-        });
-    }
+        })
 
+        
+    }
 
     //POST /api/rounds/:round/start
     start_round(params, callback) {

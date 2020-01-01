@@ -4,22 +4,22 @@ const Schema = mongoose.Schema;
 const Instance_schema = new Schema(
     {
         os_details:{
-            hostname:String,
-            release: String,
+            hostname:{type:String, required:[true, 'Hostname required']},
+            release: {type:String, required:[true, 'Os release required']},
             network:{
-                ip: String,
-                mac: String
+                ip_addr: {type:String, required:[true, 'Ip address required for communication']},
+                hw_addr: {type:String, required:[true, 'Hardware (mac) address required for super secret spy stuff ;)']}
             }
         },
         scoring_config: Object,
-        team: {type: mongoose.Schema.Types.ObjectId, ref: 'Teams'},
+        team: {type: mongoose.Schema.Types.ObjectId, ref: 'Teams', default:null},
         score: {
             current: Number,
             previous: Number
         },
         uid: String,
-        running: Boolean,
-        round: {type: mongoose.Schema.Types.ObjectId, ref: 'Rounds'}
+        running: {type:Boolean, default:false},
+        round: {type: mongoose.Schema.Types.ObjectId, ref: 'Rounds', default:null}
     },
     {timestamps: true}
 )

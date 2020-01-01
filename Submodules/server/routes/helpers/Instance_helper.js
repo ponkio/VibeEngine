@@ -33,33 +33,25 @@ class Instances_helper {
         })
     }
 
-    //This definitly needs to be in Utils
-    //Used to get the nested keys...Kinda like Object.keys but better
-     getKeys(object) {
-        function iter(o, p) {
-            if (Array.isArray(o)) { return; }
-            if (o && typeof o === 'object') {
-                var keys = Object.keys(o);
-                if (keys.length) {
-                    keys.forEach(function (k) { iter(o[k], p.concat(k)); });
-                }
-                return;
-            }
-            result.push(p.join('.'));
-        }
-        var result = [];
-        iter(object, []);
-        return result;
-    }
+   // Removed getKeys since I no longer need the fake schema validation
 
     // Still needs to check for duplicate instances
-    // This duplicate will be based on hostname, IP address, Mac address, etc...
+    // A duplicate instance should be considered if(ip_addr && hw_addr && hostname in database)
+    // ^ I need some other minds to brainstorm this with
     async create_new_instance(req, callback){
+
+        /* DO NOT LOOK AT THESE COMMENTS ANYMORE
+        ONLY HERE TO BUFF THE LINE NUMBERS
+
 
         //Only allow for required args
         //Once again...maybe a utils.js function
         //Crazy how redunadnt my code is :/
         // This is fucked for nested objects like at all :/
+
+        // This is getting changed to be done with the built in validator in mongoose schemas
+        // Crazy concept..but like what if I just used BUILT IN funcitons instead of recreating the wheel??
+        
         let passed_keys = this.getKeys(req.body);
         console.log(passed_keys)
         let required_keys = _.without(Object.keys(Instance_schema.schema.paths), '_id','team._id','uid','score', 'score.current', 'score.previous','updatedAt','createdAt','__v')
@@ -68,7 +60,9 @@ class Instances_helper {
             logger.info({label:`create_new_instance`, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
             //return callback({status:400, message:`Missing / invalid value(s): ${_.xor(passed_keys, required_keys)}`})
         }
+        */
 
+        // idk but I feel like this can be done a _little_ better
         let team = await Team_schema.findOne({team_name:req.body.team.team_name}, (err) => {
             if(err){
                 throw new Error(err);
@@ -89,36 +83,40 @@ class Instances_helper {
         let new_instance = new Instance_schema(req.body);
         new_instance.uid = uuid();
         //new_instance.team needs to have the some of the team object like name AND ._id...maybe..who knows I'm not database engineer
-        new_instance.team = team._id;
-        new_instance.round = round._id;
-        new_instance.running = false;
+        new_instance.team = team;
+        new_instance.round = round;
         //team.instances.push(new_instance);
         //team.save()
 
         new_instance.save((err, instance) => {
             if(err) {
-                //Means it didnt find the round name
-                return callback({status:500, message:err})
+                return callback({status:500, message:err.message})
             }
             logger.info({label:`create_new_instance`, message:`New instance created: ${instance._id}`});
-            Team_schema.findOneAndUpdate({_id:team._id}, {$push:{instances:instance}}, {new:true},(err, new_team) => {
-                instance.team = new_team._id;
-                return callback({status:200, message:[instance, round]})
-            })      //return callback({status:200, message:instance})
+            
+            if(team){
+                Team_schema.findOneAndUpdate({_id:team._id}, {$push:{instances:instance}}, {new:true},(err, new_team) => {
+                    instance.team = new_team._id;
+                    return callback({status:200, message:[instance, round]})
+                })  
+            }
 
             //When updating a document that is referencing please for the love of god push the entire document and not just the ._id
             //While pushing the ._id will work its just kinda gross...Not that everything else in this ISNT gross but still
-            Round_schema.findOneAndUpdate({_id:round._id}, {$push:{instances:instance._id}}, (err, round) => {
-                if(err) {
-                    return callback({status:500, message:err})
-                }
-            })
+            if(round){
+                Round_schema.findOneAndUpdate({_id:round._id}, {$push:{instances:instance._id}}, (err, round) => {
+                    if(err) {
+                        return callback({status:500, message:err})
+                    }
+                })
+            }
+ 
         })
     }
 
     //Gets ran when a client first checks in, where the round gets assigned to the instance
     client_checkin(req, callback) {
-
+        console.log("Legit nothing happens yet cause I havent polished the already shat shit enough yet")
     }
 }
 

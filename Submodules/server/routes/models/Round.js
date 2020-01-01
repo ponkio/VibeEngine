@@ -3,19 +3,33 @@ const Schema = mongoose.Schema;
 
 const Round_schema = new Schema(
     {
-        name: String,
+        name: {type:String, required:[true, 'Round name required']},
         uid: String,
-        running:Boolean,
+        running:{type:Boolean,default:false},
         instances: [
             {type:mongoose.Schema.Types.ObjectId, ref:'Instances'}
         ],
         config: {
-            round_time_limit: Date,
-            instance_time_limit: Date,
-            instance_limit: Number
+            //These settings should be buy locked
+            round_time_limit: {type:Number,min:1, max:9999, default:1444},
+            instance_time_limit: {type:Number, min:1, max:9999, default:360},
+            instance_limit: {type:Number, min:1, max:5, default:1}
         }
     },
     {timestamps:true}
 )
 
-module.exports = mongoose.model("Rounds", Round_schema);
+
+//Middleware to check for existing round
+Round_schema.pre('save', function(next) {
+    Round_model.findOne({name:this.name}, (err, round) => {
+        if(!round) {
+            next()
+        } else{
+            next("Round already exists")
+        }
+    })
+})
+
+
+module.exports = Round_model = mongoose.model("Rounds", Round_schema)
