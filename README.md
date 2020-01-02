@@ -18,6 +18,9 @@ The VibeEngine client is what is actually doing the scoring of the server. The c
 ## VibeEngine Server  
 The VibeEngine server is the brains of everything. Without a server there is no VibeEngine. Rounds are created on the VibeEngine server then a VibeEngine Client will register to the server to create teams and instances to be attached to a round. On the server is also the scoreboard. Not much has been thought out for the scoreboard yet since most of the focus for the project is being done on the backend.
 
+# Development Status
+Want to stay up to date with the development process of this. Follow the trello board [here](https://trello.com/b/q0H08yzb/vibeengine). I will try my best to keep this up to date and detailed with what is going on with the project as much as possible.   
+
 # Contribution
 I am the only developer for VibeEngine. If you would like assist in any way (ideas, development, marketing, etc..) feel free to contact me at contra_verde@protomail.com  
 _Once Vibe Engine is fully released the Pull Requests and issues will be used for contributions._ 

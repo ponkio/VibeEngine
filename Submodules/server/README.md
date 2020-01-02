@@ -18,58 +18,93 @@ There are 3 endpoint for the rest API which are all used to interface with the b
 
 
 ### Round
-For each round is being grouped by teams. Each team has a list of running instances.  
+___
+Rounds are used as mock competitions. These will attempt to simulate a real world CyberPatriot competition. A round will only keep track of instances within the round insteam of teams. This allows a single team to compete in multiple rounds at the same time without confusion on the backend. 
+  
 **Schema**
 ```
 {
-    name: String,
+    name: {type:String, required:[true, 'Round name required']},
     uid: String,
-    teams:[
-        {
-            team: {type:mongoose.Schema.Types.ObjectId, ref: 'Teams'},
-            running_instances: [{type:mongoose.Schema.Types.ObjectId, ref: 'Instances'}]
-        }
+    running:{type:Boolean,default:false},
+    instances: [
+        {type:mongoose.Schema.Types.ObjectId, ref:'Instances'}
     ],
     config: {
-        timeLimit: Date,
-        instanceLimit: Number
+        round_time_limit: {type:Number,min:1, max:9999, default:1444},
+        instance_time_limit: {type:Number, min:1, max:9999, default:360},
+        instance_limit: {type:Number, min:1, max:5, default:1}
     }
 }
 ```  
 `GET /api/rounds?key=value`  
+
+_Adding `verbose=true` to the url will resolve the team ObjectID to the respective document._ 
+
 Resp:
 ```
+{
+    "status": 200,
+    "round": {
+        "config": {
+            "round_time_limit": 50,
+            "instance_time_limit": 90,
+            "instance_limit": 1
+        },
+        "running": false,
+        "instances": [],
+        "_id": "5e0bed41a33da001babc2e48",
+        "name": "Not Oklahoma Cup",
+        "uid": "ead57458-8377-452d-9d0f-ca2a8d511237",
+        "createdAt": "2020-01-01T00:52:17.819Z",
+        "updatedAt": "2020-01-01T00:52:17.819Z",
+        "__v": 0
+    }
+}
 ```  
 `POST /api/rounds`  
 Body:  
 ```
+{
+	"name":"Oklahoma Cup",
+	"config":{
+		"round_time_limit":50,
+		"instance_time_limit":90,
+		"instance_limit":1
+	}
+}
 ```
 Resp:
 ```
+{
+    "status": 200,
+    "message": "New round created"
+}
 ```
-
+_The above response should be what all the other responses look like._
 ### Instance
+___
 Each client that reports in will create an instance. The instance is assigned to a team in the round.  
 **Schema**
 ```
 {
     os_details:{
-        hostname:String,
-        release: String,
+        hostname:{type:String, required:[true, 'Hostname required']},
+        release: {type:String, required:[true, 'Os release required']},
         network:{
-            ip: String,
-            mac: String
+            ip_addr: {type:String, required:[true, 'Ip address required for communication']},
+            hw_addr: {type:String, required:[true, 'Hardware (mac) address required for super secret spy stuff ;)']}
         }
     },
     scoring_config: Object,
-    team: {type: mongoose.Schema.Types.ObjectId, ref: 'Teams'},
+    team: {type: String, ref: 'Teams', default:null},
     score: {
         current: Number,
         previous: Number
     },
     uid: String,
-    running: Boolean,
-    round: {type: mongoose.Schema.Types.ObjectId, ref: 'Rounds'}
+    running: {type:Boolean, default:false},
+    round: {type: String, ref: 'Rounds', default:null}
 }
 ```
 `GET /api/instances?key=value`  
@@ -77,88 +112,86 @@ As of of now you have the ability to search for any key/value pair that is in th
 
 _Adding `verbose=true` to the url will resolve the team ObjectID to the respective document._  
 
-`POST /api/instances`  
+`POST /api/instances`
+All of the parameters that are here will get gathered during the checkin process that each client does. If `team` or `round` is not passed then it will get set to null. This allows for independent users who want to practice without any team affilation or round scoring.     
 Body:  
 ```
 {
 	"os_details":{
-		"hostname":"test_os",
-		"release":"ArchLinux uWu",
-		"network": {
-            "ip":"192.168.0.69",
-            "mac":"18:1d:ea:4c:48:ab"
-        }
+		"hostname":"Cyberpatriot_practice01",
+		"release":"Ubuntu",
+		"network":{
+			"ip_addr":"127.0.0.1",
+			"hw_addr":"TH:IS:0I:S0:HE:X0"
+		}
 	},
 	"scoring_config": "WIP",
-	"team":{
-		"team_name":"test2"
-	},
-    "round":"Oklahoma Cup"
+	"team":"test2",
+	"round":"Oklahoma Cup"
 }
 ```  
 Resp:  
 ```
 {
     "status": 200,
-    "message": {
+    "instance": {
         "os_details": {
-            "hostname": "test_os",
-            "release": "ArchLinux uWu"
+            "network": {
+                "ip_addr": "127.0.0.1",
+                "hw_addr": "TH:IS:0I:S0:HE:X0"
+            },
+            "hostname": "Cyberpatriot_practice01",
+            "release": "Ubuntu"
         },
-        "_id": "5df6ea6c6c7db43f953f4f5e",
+        "team": "test2",
+        "running": false,
+        "round": "Oklahoma Cup",
+        "_id": "5e0c05162ec8b41973b6f508",
         "scoring_config": "WIP",
-        "uid": "a80f7d8d-0a11-406c-b926-44c0dd2e5ff4",
-        "round: "5df974eea7a5a05b3e7daa95",
-        "team": "5def1511b4ba7c7ae6ffd5cf",
-        "createdAt": "2019-12-16T02:22:36.743Z",
-        "updatedAt": "2019-12-16T02:22:36.743Z",
+        "uid": "cc3bc27b-4079-4d3b-a912-5b358c4f2fe1",
+        "createdAt": "2020-01-01T02:33:58.765Z",
+        "updatedAt": "2020-01-01T02:33:58.765Z",
         "__v": 0
     }
 }
 ```
 ### Team
-Each client will be associated with a team or assigned an empty team. 
+___
+Teams are created to aggregate instances to a group of users. Ideally this will be a CyberPatriot team.  
   
 **Schema**
 ```
 {
-    team_name: String,
-    team_number: String,
+    team_name: {type:String, require:[true, "Team name required to create a team"]},
+    team_number: {type:String},
     uid: String,
     instances: [
         {type: mongoose.Schema.Types.ObjectId, ref:'Instances'}
-    ] 
+    ], 
 }
 ```
 
-`GET /api/teams?team_name=test2`  
-As of of now you have the ability to search for any key/value pair that is in the document. This also enabled you to refine searches to match multiple parameters.  
+`GET /api/teams?key=value`  
+As of of now you have the ability to search for any key/value pair that is in the document. This also enabled you to refine searches to match multiple parameters.   
 
 _Adding `verbose=true` to the url will resolve the instance ObjectID to the respective documents._  
 Resp:  
 ```
 {
     "status": 200,
-    "message": {
-        "instances": [
-            "5df6c673ea38742b6ad7218c",
-            "5df6c6aef33fac2bdaeba489",
-            "5df6c9d66f27482e1aa2f18b",
-            "5df6ca32b7a5822ef9a2a25e",
-            "5df6ca904d58872f56fa809d",
-            "5df6cc69ef633e3252439a34"
-        ],
-        "_id": "5def1511b4ba7c7ae6ffd5cf",
-        "rounds": [],
-        "team_name": "test2",
-        "team_number": "OK-124a0",
-        "uid": "1d825ca7-dd09-4049-a8ed-a73300037962",
-        "createdAt": "2019-12-10T03:46:25.131Z",
-        "updatedAt": "2019-12-16T00:14:33.383Z",
-        "__v": 1
+    "team": {
+        "instances": ['5df6c9d66f27482e1aa2f18b],
+        "_id": "5e0c0d2234bebd225e474ff5",
+        "team_name": "new_team",
+        "team_number": "12364",
+        "uid": "56e1c5f4-81d6-4d31-8152-22b3689b2440",
+        "createdAt": "2020-01-01T03:08:18.987Z",
+        "updatedAt": "2020-01-01T03:08:18.987Z",
+        "__v": 0
     }
 }
 ```
+
 `POST /api/teams`  
 Body:
 ``` 
@@ -170,16 +203,22 @@ Body:
 Resp:
 ```
 {
-    "status": 201,
-    "message": "New team created {
-        instances: [],
-        _id: 5df6e6f32e74043a2da3fb22,
-        team_name: 'Test_team',
-        team_number: 'OK-1234',
-        uid: 'f45d2e7b-08af-4df5-a0c7-7508593bfcf1',
-        createdAt: 2019-12-16T02:07:47.687Z,
-        updatedAt: 2019-12-16T02:07:47.687Z,
-        __v: 0
-    }"
+    "status": 200,
+    "team": {
+        "instances": [],
+        "_id": "5e0c0d2234bebd225e474ff5",
+        "team_name": "new_team",
+        "team_number": "12364",
+        "uid": "56e1c5f4-81d6-4d31-8152-22b3689b2440",
+        "createdAt": "2020-01-01T03:08:18.987Z",
+        "updatedAt": "2020-01-01T03:08:18.987Z",
+        "__v": 0
+    }
+}
+```  
+Errors:  
+```
+{
+
 }
 ```
