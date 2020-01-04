@@ -9,11 +9,9 @@
         },
         {
             "name":"VibeEngine Client",
-            "script":"pipenv",
-            "args":["run", "dev_client"],
-            "watch":["**/client/**/*.py", "**/*.json", "VibeEngine.py"],
+            "script":"Submodules/client/main.js",
+            "watch":["**/client/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
-            "interpreter":"/usr/bin/python3",
             "autorestart":false
         }
     ]
