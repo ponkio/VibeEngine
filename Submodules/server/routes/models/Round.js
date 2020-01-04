@@ -11,10 +11,14 @@ const Round_schema = new Schema(
         ],
         config: {
             //These settings should be buy locked
+            //Default time for the rounds are 24 hours and each instance has 6 hours
+            //Represented by minutes
             round_time_limit: {type:Number,min:1, max:9999, default:1444},
             instance_time_limit: {type:Number, min:1, max:9999, default:360},
             instance_limit: {type:Number, min:1, max:5, default:1}
-        }
+        },
+        time_started: Date,
+        completed: false
     },
     {timestamps:true}
 )

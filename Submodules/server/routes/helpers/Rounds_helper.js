@@ -44,7 +44,7 @@ class Rounds_helper{
 
         let new_round = new Round_schema(req.body);
         new_round.uid = uuid();
-
+    
         //This took so long to actually implement but damn is it cool
         //Logic is taking place in the middleware in ../models/Round.s
         new_round.save((err) => {
@@ -60,13 +60,29 @@ class Rounds_helper{
 
     //POST /api/rounds/:round/start
     start_round(params, callback) {
-        Round_schema.findOneAndUpdate({name:params.name}, {running:true}, (err, round) => {
-            console.log(round)
+
+        //This query works but the error message isnt as good. Maybe 2 queries might be the way to go for this
+        //Or crazy concept...but put it in some sort of middleware/schema function]
+        
+        Round_schema.findOne({name:params.name},(err, round) => {
+            //console.log(round)
+            //Classic if statement checks again...ugh
             if(!round) {
-                return callback({status:400, message:`Round ${params.name} not found`});
+                return callback({status:400, message:`Round ${params.name} not found!`});
+            } else if(round.running == true) {
+                return callback({status:200, message: `Round ${round.name} is already running`})
+            } else if (round.completed == true) {
+                return callback({status:200, message:`Round ${round.name} has been completed already`})
+            } else {
+                //This is an interesting way to do this
+                round.updateOne({running:true, time_started:new Date()}, (err) => {
+                    if(err) {
+                        return callback({status:500, message:err})
+                    }
+                })
+                return callback({status: 200, message:`Round ${params.name} started`})
             };
 
-            return callback({status: 200, message:`Round ${params.name} started`})
         })
     };
 
