@@ -18,6 +18,8 @@ The cli to setup and configure the VibeEngine.
 * [Configuration](#Configuration)
   * [Usage](#usage)
   * [Commands](#commands)
+* [Development status](#Development-status)
+* [Contribution](#Contribution)
 <!-- tocstop -->
 
 # Overview
@@ -125,3 +127,12 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 <!-- commandsstop -->
+
+
+# Development Status
+Want to stay up to date with the development process of this. Follow the trello board [here](https://trello.com/b/q0H08yzb/vibeengine). I will try my best to keep this up to date and detailed with what is going on with the project as much as possible. 
+
+# Contribution
+I am the only developer for VibeEngine. If you would like assist in any way (ideas, development, marketing, etc..) feel free to contact me at contra_verde@protomail.com  
+ 
+_Once Vibe Engine is fully released the Pull Requests and issues will be used for contributions._ 
