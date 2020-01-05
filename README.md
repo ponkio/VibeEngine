@@ -1,26 +1,127 @@
-# VibeEngine
-VibeEngine is a new CyberPatriot scoring engine for teams to use for practice in between competition and during the offseason. If you don't know what CyberPatriot is, well you can read up on it [here](https://www.uscyberpatriot.org/Pages/About/What-is-CyberPatriot.aspx).  
-VibeEngine is being developed to act as a CyberPatiot competition simulator to be as close to the real competition as possible. This will give current and upcoming teams a feel for what competition is like and a chance to hone their skills outside of competition times. 
+VibeEngine
+==============
 
-_Disclaimer: This readme does not go into too much detail due to everything still being in development._
+<!-- Logo placement-->
 
-The goal for the VibeEngine is to support both linux, windows, and any other custom scoring engine that you develop. The VibeEngine will come in two parts: VibeEngine Client and VibeEngine Server. While these are seperated into two parts there will be multiple ways to run the VibeEngine. Here are a few:  
-- Standalone
-    - Will run the client and server on the same machine, can be done offline with no network/LAN connection.
-- Client
-    - Will only run the client and report to a server that is hosted either on the LAN on publically hosted
-- Server
-    - Hosts the server seperate from the client, useful for custom scoring engines that only wish to use the scoreboard feature. 
+The cli to setup and configure the VibeEngine.
 
-## VibeEngine Client
-The VibeEngine client is what is actually doing the scoring of the server. The client read from an enginer configuration file to know what to score. Once the score is created it is reported to a VibeEngine server. 
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/VibeEngine.svg)](https://npmjs.org/package/VibeEngine_cli)
+[![License](https://img.shields.io/npm/l/VibeEngine.svg)](https://github.com/C0ntra99/VibeEngine/blob/master/package.json)
 
-## VibeEngine Server  
-The VibeEngine server is the brains of everything. Without a server there is no VibeEngine. Rounds are created on the VibeEngine server then a VibeEngine Client will register to the server to create teams and instances to be attached to a round. On the server is also the scoreboard. Not much has been thought out for the scoreboard yet since most of the focus for the project is being done on the backend.
+<!-- toc -->
+* [Overview](#Overview)
+* [Design](#Design)
+  * [VibeEngine Server](#VibeEngine-Server)
+  * [VibeEngine Client](#VibeEngine-Client)
+* [Deployment](#Deployment)
+* [Configuration](#Configuration)
+  * [Usage](#usage)
+  * [Commands](#commands)
+<!-- tocstop -->
 
-# Development Status
-Want to stay up to date with the development process of this. Follow the trello board [here](https://trello.com/b/q0H08yzb/vibeengine). I will try my best to keep this up to date and detailed with what is going on with the project as much as possible.   
+# Overview
+The VibeEngine is a CyberPatriot scoring engine for teams around the world to use as a practice resource. If you don't know what CybePatriot is you can read up on it [here](https://www.uscyberpatriot.org/Pages/About/What-is-CyberPatriot.aspx).  
 
-# Contribution
-I am the only developer for VibeEngine. If you would like assist in any way (ideas, development, marketing, etc..) feel free to contact me at contra_verde@protomail.com  
-_Once Vibe Engine is fully released the Pull Requests and issues will be used for contributions._ 
+VibeEngine is created in such a way that it simulates a real world CyberPatriot competition. This means that teams will have the ability to create their own round and practice images.  
+
+_Disclaimer: This readme does not go into too much detail due to everything still being in development._  
+
+
+# Design
+The engine is designed in 2 parts allowing for 3 ways of deployment. The two parts are as follows:
+
+### VibeEngine-Server
+The server is responsible for mangaging the scoring of the clients that are connected to it. In order for a VibeEngine Client to score the server it is running on it must be connected to a server. The server will periodally send a request to each of its connected clients to retrieve a score. All the scores for each round or connected client is then displayed on a webpage that is hosted by the server.  
+
+_More info [Here](https://github.com/C0ntra99/VibeEngine-Server)_
+
+### VibeEngine-Client
+The client is responsible for the actual scoring of the instance. Once a score request is recieved from a server the client will read its scoring configuration file and score accordingly. Once the scoring is completed it will be sent back to the server to be displayed.
+
+_More info [Here](https://github.com/C0ntra99/VibeEngine-Client)_
+
+# Deployments
+Since the VibeEngine is designed in a modular fashion it is flexible in how it is deployed. The 3 main deployment methods are described bellow:  
+
+1. Server:
+- Description: Is not running any sort of checks on the machine.  
+- Reason: Meant to act as a centralized scoreboard for multiple connected clients that are on the same LAN.
+2. Client
+- Description: Only runs the checks on a machine. Does not have the ablity to display scores. 
+- Reason: If there is already a VibeEngine Server deployed on the network.
+3. Standalone
+- Description: Hosts BOTH the VibeEngine Client and Server on the same machine. Meant for standalone instance scoring. Scoreboard and scoring logic is all in one place. 
+- Reason: Meant to have the ability so if one person wanted to practive indivdually.
+
+# Configuration
+In order to properly configure the VibeEngine this CLI was written. This manages the installation and deployment process for the VibeEngine. 
+## Usage
+<!-- usage -->
+```sh-session
+$ npm install -g VibeEngine
+$ VibeEngine COMMAND
+running command...
+$ VibeEngine (-v|--version|version)
+VibeEngine_cli/0.0.0 linux-x64 node-v13.3.0
+$ VibeEngine --help [COMMAND]
+USAGE
+  $ VibeEngine COMMAND
+...
+```
+<!-- usagestop -->
+## Commands
+<!-- commands -->
+* [`VibeEngine install`](#vibeengine-install)
+* [`VibeEngine config`](#vibeengine-config)
+* [`VibeEngine help [COMMAND]`](#vibeengine-help-command)
+
+### `VibeEngine install`
+
+Install VibeEngine components
+```
+USAGE
+  $ VibeEngine install
+
+OPTIONS
+  -c, --config=config                  [default: VibeEngine.conf] Path to the configuration file
+  -m, --mode=client|server|standalone  (required) VibeEngine mode
+
+EXAMPLES
+  $ VibeEngine install -m client -c VibeEngine.conf
+  $ VibeEngine install -m server -c /home/user/VibeEngine.conf
+  $ VibeEngine install --mode standalone
+
+```
+
+_See code: [src/commands/install.js](https://github.com/C0ntra99/VibeEngine/blob/master/src/commands/install.js)_
+
+### `VibeEngine config`
+
+Configure VibeEngine components
+```
+USAGE
+  $ VibeEngine config
+
+OPTIONS
+  -c, --config=config  [default: VibeEngine.conf] Path to the configuration file
+```
+_See code: [src/commands/config.js](https://github.com/C0ntra99/VibeEngine/blob/master/src/commands/config.js)_
+
+### `VibeEngine help [COMMAND]`
+
+display help for VibeEngine
+
+```
+USAGE
+  $ VibeEngine help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+<!-- commandsstop -->
