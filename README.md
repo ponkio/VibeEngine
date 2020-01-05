@@ -6,8 +6,8 @@ VibeEngine
 The cli to setup and configure the VibeEngine.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/VibeEngine.svg)](https://npmjs.org/package/VibeEngine_cli)
-[![License](https://img.shields.io/npm/l/VibeEngine.svg)](https://github.com/C0ntra99/VibeEngine/blob/master/package.json)
+[![Version](https://img.shields.io/github/package-json/v/C0ntra99/VibeEngine)](https://npmjs.org/package/VibeEngine_cli)
+[![License](https://img.shields.io/github/license/C0ntra99/VibeEngine)](https://github.com/C0ntra99/VibeEngine/blob/master/LICENSE)
 
 <!-- toc -->
 * [Overview](#Overview)

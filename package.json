@@ -1,6 +1,6 @@
 {
-  "name": "VibeEngine_cli",
-  "description": "The cli to setup and configure the VibeEngine.",
+  "name": "VibeEngine",
+  "description": "The main package to setup and configure the VibeEngine.",
   "version": "0.0.0",
   "author": "C0ntra99",
   "bin": {
@@ -33,7 +33,7 @@
   "keywords": [
     "oclif"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
