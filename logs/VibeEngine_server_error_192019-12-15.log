@@ -1,5 +1,0 @@
-19Y-12-15 15:32:36.493 [DESKTOP-FGBMJ7H] [dbConnection] [error] MongoDB connection error: MongoNetworkError: failed to connect to server [localhost:27017] on first connect [Error: connect ECONNREFUSED 127.0.0.1:27017
-    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1136:16) {
-  name: 'MongoNetworkError',
-  [Symbol(mongoErrorContextSymbol)]: {}
-}]
