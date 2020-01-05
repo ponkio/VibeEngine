@@ -2,15 +2,15 @@
     "apps":[
         {
             "name": "VibeEngine Server",
-            "script":"Submodules/server/main.js",
-            "watch":["**/server/**/*.js","**/*.json"],
+            "script":"Submodules/VibeEngine-Server/main.js",
+            "watch":["**/VibeEngine-Server/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "autorestart":false
         },
         {
             "name":"VibeEngine Client",
-            "script":"Submodules/client/main.js",
-            "watch":["**/client/**/*.js","**/*.json"],
+            "script":"Submodules/VibeEngine-Client/main.js",
+            "watch":["**/VibeEngine-Client/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "autorestart":false
         }

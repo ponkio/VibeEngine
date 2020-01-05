@@ -1,0 +1,6 @@
+[submodule "Submodules/VibeEngine-Server"]
+	path = Submodules/VibeEngine-Server
+	url = https://github.com/C0ntra99/VibeEngine-Server
+[submodule "Submodules/VibeEngine-Client"]
+	path = Submodules/VibeEngine-Client
+	url = https://github.com/C0ntra99/VibeEngine-Client

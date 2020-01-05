@@ -1,0 +1,344 @@
+19Y-12-26 17:10:27.308 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:10:27.358 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:11:35.540 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:11:35.586 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:13:25.720 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:13:25.766 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:13:30.757 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:13:30.807 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:15:50.907 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:15:50.943 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:17:59.146 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:17:59.181 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:29:01.720 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:29:12.879 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:29:12.914 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:31:12.756 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:31:14.238 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:31:14.271 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:31:27.948 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running,round
+19Y-12-26 17:31:27.981 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e0534bff4c648090225d732
+19Y-12-26 17:32:15.325 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:32:15.340 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e0534eff4c648090225d733
+19Y-12-26 17:32:25.828 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:32:27.245 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:32:27.304 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:33:10.598 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:33:11.951 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:33:11.999 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:33:15.379 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:34:54.748 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:34:54.766 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e05358eb7ecb0095825d3c4
+19Y-12-26 17:40:10.637 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:40:10.645 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e0536cab7ecb0095825d3c5
+19Y-12-26 17:40:39.881 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:40:39.929 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:40:46.876 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:40:46.921 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:37.527 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:37.577 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:39.284 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:39.331 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:41.174 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:41.219 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:42.930 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:42.964 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:44.660 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:44.705 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:46.306 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:46.356 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:47.993 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:48.035 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:49.731 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:49.775 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:51.455 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:51.505 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:53.100 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:53.136 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:54.990 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:55.036 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:56.658 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:56.706 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:41:58.345 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:41:58.386 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:00.129 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:00.172 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:01.787 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:01.828 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:03.450 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:03.487 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:05.292 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:05.333 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:07.170 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:07.225 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:08.925 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:08.969 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:10.607 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:10.655 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:12.525 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:12.560 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:14.238 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:14.293 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:16.020 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:16.070 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:17.924 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:17.976 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:19.805 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:19.852 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:21.693 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:21.721 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:23.507 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:23.557 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:25.447 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:25.493 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:27.486 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:27.540 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:29.528 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:29.584 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:31.612 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:31.666 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:33.572 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:33.620 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:35.432 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:35.455 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:37.474 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:37.525 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:39.192 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:39.232 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:40.881 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:40.925 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:42.546 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:42.593 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:44.263 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:44.314 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:46.225 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:46.256 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:47.994 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:48.038 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:49.722 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:49.762 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:51.455 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:51.496 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:53.141 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:53.191 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:54.834 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:54.878 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:56.540 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:56.589 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:58.250 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:42:58.293 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:42:59.996 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:00.049 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:01.688 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:01.733 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:03.528 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:03.573 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:05.359 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:05.399 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:07.072 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:07.117 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:08.798 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:08.843 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:10.483 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:10.523 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:12.151 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:12.197 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:13.860 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:13.911 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:15.621 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:15.665 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:17.317 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:17.365 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:18.981 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:19.019 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:20.619 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:20.669 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:22.297 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:22.342 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:24.030 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:24.085 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:25.710 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:25.752 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:27.345 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:27.385 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:29.021 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:29.071 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:30.682 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:30.725 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:32.364 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:32.400 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:34.071 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:34.119 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:35.869 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:35.910 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:37.551 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:37.591 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:39.226 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:39.267 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:41.071 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:41.121 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:42.892 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:42.945 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:44.672 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:44.717 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:46.341 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:46.388 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:47.995 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:48.039 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:49.719 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:49.767 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:51.413 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:51.465 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:53.060 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:53.105 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:54.747 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:54.806 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:56.651 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:56.695 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:43:58.501 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:43:58.533 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:00.154 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:00.197 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:01.839 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:01.880 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:03.839 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:03.887 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:05.674 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:05.726 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:07.591 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:07.637 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:09.578 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:09.630 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:13.002 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:13.047 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:14.958 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:15.009 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:16.945 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:16.985 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:18.586 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:18.633 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:20.343 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:20.390 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:22.174 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:22.219 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:23.865 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:23.903 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:25.601 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:25.636 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:27.236 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:27.264 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:28.899 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:28.939 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:30.603 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:30.631 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:32.217 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:33.842 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:33.888 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:38.965 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:39.023 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:42.726 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:42.777 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:44.792 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:44.833 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:46.702 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:46.753 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:48.762 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:48.809 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:50.666 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:50.705 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:52.359 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:52.399 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:54.059 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:54.101 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:55.805 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:55.847 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:57.542 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:57.588 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:44:59.258 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:44:59.310 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:00.974 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:01.021 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:02.681 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:02.728 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:04.192 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:04.216 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:06.014 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:06.055 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:07.363 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:07.389 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:08.617 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:08.637 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:09.700 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:09.744 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:11.151 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:11.204 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:12.979 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:13.011 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:14.547 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:14.584 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:16.149 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:16.183 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:17.765 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:17.822 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:19.434 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:19.466 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:21.053 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:21.096 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:23.148 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:23.191 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:24.860 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:24.891 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:26.438 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:26.487 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:28.193 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:28.234 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:29.927 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:29.962 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:31.726 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:31.766 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:33.580 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:33.628 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:35.296 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:35.333 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:37.009 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:37.042 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:38.859 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:38.900 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:40.724 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:40.754 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:42.572 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:42.620 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:44.534 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:44.577 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:45:53.226 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:45:53.293 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:46:31.793 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:46:31.825 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053847afbd0517bfe56753
+19Y-12-26 17:49:36.925 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:49:36.971 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:49:45.713 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:49:45.761 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053909a19a12192c24439c
+19Y-12-26 17:50:03.800 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:50:03.825 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:50:06.727 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:50:06.788 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e05391e443a0219564290eb
+19Y-12-26 17:51:10.897 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:51:10.938 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:54:27.510 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:54:27.562 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:54:36.200 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:54:36.239 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053a2cb07f841a7ed0a25a
+19Y-12-26 17:55:29.687 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:55:29.733 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:55:36.797 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:55:36.863 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053a686e7fef1b2ed8169b
+19Y-12-26 17:58:26.601 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:58:26.645 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:58:31.102 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:58:31.173 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053b178311511d3d9dbbf6
+19Y-12-26 17:58:32.929 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:58:32.975 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:58:57.748 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+19Y-12-26 17:58:57.794 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+19Y-12-26 17:58:59.929 [DESKTOP-FGBMJ7H] [create_new_instance] [info] Missing / invalid value(s): os_details.ip,team.team_name,os_details.network.ip,os_details.network.mac,team,running
+19Y-12-26 17:58:59.997 [DESKTOP-FGBMJ7H] [create_new_instance] [info] New instance created: 5e053b335eb2b71d99db7f00

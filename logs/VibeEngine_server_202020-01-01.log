@@ -1,0 +1,40 @@
+20Y-01-01 16:19:06.159 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:19:06.189 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:19:52.316 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:19:52.364 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:20:49.551 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:20:49.599 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:21:55.856 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:21:55.883 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:22:05.558 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:22:05.588 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:22:27.065 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:22:27.092 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:22:41.050 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:22:41.082 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:23:29.031 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:23:29.062 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:24:47.151 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:24:47.182 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:25:20.126 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:25:20.166 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:25:46.673 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:25:46.702 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:26:01.272 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:26:01.294 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:26:22.933 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:26:22.969 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:27:17.685 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:27:17.708 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:27:36.250 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:27:36.284 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 16:28:08.399 [DESKTOP-FGBMJ7H] [main] [info] Starting server on port 8080
+20Y-01-01 16:28:08.417 [DESKTOP-FGBMJ7H] [dbConnection] [info] connected to the database
+20Y-01-01 21:59:01.319 [DESKTOP-FGBMJ7H] [getTeam] [info] Team query with the following parameters: {"team_name":"new_team"}
+20Y-01-01 22:03:15.628 [DESKTOP-FGBMJ7H] [getInstance] [info] Instance query with the following paramenters: {"team":"new_team"}
+20Y-01-01 22:03:18.347 [DESKTOP-FGBMJ7H] [getInstance] [info] Instance query with the following paramenters: {"team":"new"}
+20Y-01-01 22:03:25.318 [DESKTOP-FGBMJ7H] [getInstance] [info] Instance query with the following paramenters: {"team":"test2"}
+20Y-01-01 22:04:35.015 [DESKTOP-FGBMJ7H] [getInstance] [info] Instance query with the following paramenters: {"os_details.hostname":"test_os"}
+20Y-01-01 22:07:07.727 [DESKTOP-FGBMJ7H] [getRound] [info] Round query with the following parameters: {"name":"Not Oklahoma Cup?verbose=true"}
+20Y-01-01 22:07:13.033 [DESKTOP-FGBMJ7H] [getRound] [info] Round query with the following parameters: {"name":"Not Oklahoma Cup","verbose":"true"}
+20Y-01-01 22:07:18.687 [DESKTOP-FGBMJ7H] [getRound] [info] Round query with the following parameters: {"name":"Oklahoma Cup","verbose":"true"}
