@@ -2,13 +2,14 @@ const {Command, flags} = require('@oclif/command')
 const prompt = require('prompt')
 const colors = require('colors/safe')
 const fs = require('fs')
-
+const config_template = require('../templates/config_template')
 //VibeEngine config -m {Server|Client|Standalone}
 //Walks user through the setup process for whichever mode and will spit out a json file
-//Json file is the config for the client and server, 
+//Json file is the config for the client and server,
+//During the runtime of this command the -c flag will set an environemnt variable to store the location of the config file
 /*
-For client configuration the server will be null
-For server confiuguration the client will be null
+For client configuration the server should be null
+For server confiuguration the client should be null
 For standalone configuration both client and server will be populated
 {
     config:{
@@ -35,18 +36,39 @@ For standalone configuration both client and server will be populated
 */
 class ConfigCommand extends Command {
     async run(){
-        let schema = {
+        //Show how the command is grabbed
+        let server_schema = {
             properties:{
-                name1:{
-                    description: "Enter name1 pls:",
+                api_ip:{
+                    description: "Enter the IP address to listen on",
                     type:'string',
-                    default:'name1'
+                    default:'0.0.0.0'
                 },
-                name2:{
-                    description: "Enter name2:",
+                api_port:{
+                    description: "Enter the port to listen on",
                     type:'string',
-                    default:'name2'
+                    default:'8080'
+                },
+                install_location:{
+                    description:"Enter the path to install the server at",
+                    type:'string',
+                    default:'/etc/VibeEngine-Server'
                 }
+            }
+        }
+
+        let client_schema = {
+            properties:{
+                api:[{
+                    ip:{
+                        description:"test nested thing",
+                        type:'string'
+                    },
+                    port:{
+                        description:"nested thing 2",
+                        trype:'string'
+                    }
+                }]
             }
         }
         const {flags} = this.parse(ConfigCommand)
@@ -54,15 +76,31 @@ class ConfigCommand extends Command {
         if(flags.interactive){
             prompt.message=colors.green(`VibeEngine Config:${flags.mode}`)
             prompt.start()
-            prompt.get(schema, (err, res) => {
-                if(err) {
-                    console.log(err)
-                }
+            if(flags.mode =='server'){
+                prompt.get(server_schema, (err, res) => {
+                    if(err) {
+                        console.log(err)
+                    }
 
-            })
+                    //This is dumb and I'm 1000x certain there is a better way to do it
+                    config_template.server.api.ip = res.api_ip;
+                    config_template.server.api.port = res.api_port;
+                    config_template.server.install_location = res.install_location;
+                    
+                    //Write the config to a file
+                    this.log(config_template)
+                })
+            } else if (flags.mode =='client') {
+                prompt.get(client_schema, (err, res) => {
+                    this.log(res)
+                })
+            }
         } else if(!flags.config) {
-            this.error("-c, --config= is required with the --no-interactive flag", {exit:1})
+            this.log(`Creating server with the defaults: ${JSON.stringify(config_template)}`)
+            //this.error("-c, --config= is required with the --no-interactive flag", {exit:1})
         }
+
+        this.log(flags.config)
         //this.log(`CONFIG: ${flags.interactive}`)
     }
 }
@@ -85,7 +123,8 @@ ConfigCommand.flags = {
     config:flags.string({
         char:'c',
         description:'Path to the configuration file',
-        dependsOn:['interactive']
+        //dependsOn:['interactive']
+        //During runtime of this command the path will get set to an env variable
         //default:'VibeEngine.conf'
     }),
     mode:flags.string({

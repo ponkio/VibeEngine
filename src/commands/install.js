@@ -5,7 +5,7 @@ const {Command, flags} = require('@oclif/command')
 class InstallCommand extends Command {
     async run(){
         const {flags} = this.parse(InstallCommand)
-        this.log(`INSTALL: ${flags.mode}`)
+        this.log("installing client")
     }
 }
 

@@ -107,6 +107,7 @@ USAGE
 
 OPTIONS
   -c, --config=config  [default: VibeEngine.conf] Path to the configuration file
+  -m, --mode=client|server|standalone 
 ```
 _See code: [src/commands/config.js](https://github.com/C0ntra99/VibeEngine/blob/master/src/commands/config.js)_
 
