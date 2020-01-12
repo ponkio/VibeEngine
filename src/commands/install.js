@@ -2,6 +2,7 @@ const {Command, flags} = require('@oclif/command')
 
 //VibeEngine install -m {Server|Client|Standalone} -c <path to config location>
 // if the config location does not exist then run through config/setup process (see ../config/index.js for the config layout)
+//install location will dynamically generate a service file to start either the client or server or both based off of flags.config
 class InstallCommand extends Command {
     async run(){
         const {flags} = this.parse(InstallCommand)
