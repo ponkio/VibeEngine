@@ -58,6 +58,7 @@ class ConfigCommand extends Command {
             }
         }
 
+        //client_schema needs to include the path to the engine config itself
         let client_schema = {
             properties:{
                 api:{
@@ -121,7 +122,15 @@ class ConfigCommand extends Command {
             } else if (flags.mode =='client') {
                 prompt.message=colors.green(`VibeEngine Config:${flags.mode}`)
                 prompt.get(client_schema, (err, res) => {
-                    this.log(res)
+                    if(!path.isAbsolute(flags.config)){
+                        config_path = path.join(process.cwd(), flags.config)
+                        fs.writeFileSync(config_path, JSON.stringify(config_template, null, 4), 'utf-8')
+                        this.log(`Config created: ${path.join(process.cwd(), flags.config)}`)
+                    } else {
+                        config_path = flags.config
+                        fs.writeFileSync(config_path, JSON.stringify(config_template, null, 4), 'utf-8')
+                        this.log(`Config created: ${flags.config}`)
+                    }
                 })
             } else if (flags.mode == 'standalone') {
                 prompt.message=colors.green(`VibeEngine Config:${flags.mode}:Server`)
