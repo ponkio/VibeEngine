@@ -3,16 +3,19 @@
         {
             "name": "VibeEngine Server",
             "script":"Submodules/VibeEngine-Server/main.js",
-            "watch":["**/VibeEngine-Server/**/*.js","**/*.json"],
+            "watch":["**/**/VibeEngine-Server/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
             "autorestart":false
         },
         {
             "name":"VibeEngine Client",
             "script":"Submodules/VibeEngine-Client/main.js",
-            "watch":["**/VibeEngine-Client/**/*.js","**/*.json"],
+            "watch":["**/**/VibeEngine-Client/**/*.js","**/*.json"],
             "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
-            "autorestart":false
+            "autorestart":false,
+            "env":{
+                "VE_CONFIG_PATH":"/home/efowler/Projects/VibeLabs/VibeEngine/VibeEngine.json"
+            }
         }
     ]
 }
