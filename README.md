@@ -23,7 +23,7 @@ The cli to setup and configure the VibeEngine.
 <!-- tocstop -->
 
 # Overview
-The VibeEngine is a CyberPatriot scoring engine for teams around the world to use as a practice resource. If you don't know what CybePatriot is you can read up on it [here](https://www.uscyberpatriot.org/Pages/About/What-is-CyberPatriot.aspx).  
+The VibeEngine is a CyberPatriot scoring engine for teams around the world to use as a practice resource. If you don't know what CyberPatriot is you can read up on it [here](https://www.uscyberpatriot.org/Pages/About/What-is-CyberPatriot.aspx).  
 
 VibeEngine is created in such a way that it simulates a real world CyberPatriot competition. This means that teams will have the ability to create their own round and practice images.  
 
